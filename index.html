@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pirotécnicos El Visor La Gran B | Espectáculos y Productos</title>
+    <title>Pirotécnicos El Visor La Gran B | Portafolio y Servicios</title>
     <style>
-        /* Estilos generales */
         * {
             margin: 0;
             padding: 0;
@@ -26,9 +25,9 @@
             color: inherit;
         }
 
-        /* Encabezado y Navegación */
+        /* Encabezado */
         header {
-            background-color: rgba(15, 20, 28, 0.9);
+            background-color: rgba(15, 20, 28, 0.95);
             backdrop-filter: blur(8px);
             padding: 12px 5%;
             display: flex;
@@ -51,7 +50,7 @@
             border-radius: 4px;
         }
         .logo-nav span {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 900;
             color: #f39c12;
             text-transform: uppercase;
@@ -60,17 +59,19 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         nav a {
             font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
         nav a:hover {
             color: #f39c12;
         }
 
-        /* BIENVENIDA LLAMATIVA (HERO) */
+        /* Portada (Hero) */
         .hero {
             position: relative;
             height: 100vh;
@@ -102,7 +103,7 @@
             align-items: center;
         }
         .hero-logo {
-            max-width: 260px;
+            max-width: 240px;
             width: 100%;
             height: auto;
             margin-bottom: 20px;
@@ -110,7 +111,7 @@
             animation: pulseLogo 3s infinite ease-in-out;
         }
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 15px;
@@ -123,7 +124,7 @@
             -webkit-text-fill-color: transparent;
         }
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             max-width: 650px;
             margin: 0 auto 30px auto;
             color: #d1d5db;
@@ -137,10 +138,10 @@
         .btn-primary {
             background: linear-gradient(45deg, #e67e22, #f39c12);
             color: #000;
-            padding: 15px 32px;
+            padding: 14px 30px;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             box-shadow: 0 0 20px rgba(243, 156, 18, 0.6);
@@ -155,10 +156,10 @@
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid #ffffff;
             color: #ffffff;
-            padding: 13px 30px;
+            padding: 12px 28px;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             transition: all 0.3s;
         }
         .btn-secondary:hover {
@@ -166,36 +167,37 @@
             color: #07080b;
         }
 
-        /* Animaciones */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(243, 156, 18, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
-        }
-        @keyframes pulseLogo {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        /* Secciones de contenido */
+        /* Secciones generales */
         section {
             padding: 80px 5%;
         }
         .section-title {
             text-align: center;
-            font-size: 2.4rem;
-            margin-bottom: 45px;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
             color: #f39c12;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Catálogo / Servicios */
+        /* Quienes Somos */
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #131720, #1c2230);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 5px solid #f39c12;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .about-container p {
+            color: #d1d5db;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* Servicios */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -214,12 +216,88 @@
             border-color: #ffdd59;
         }
         .card h3 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             margin-bottom: 12px;
             color: #ffffff;
         }
         .card p {
             color: #b0b8c4;
+            font-size: 0.95rem;
+        }
+
+        /* --- GALERÍA FOTOGRÁFICA MEJORADA --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            background: #131720;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #2a3245;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(243, 156, 18, 0.2);
+            border-color: #f39c12;
+        }
+        .image-wrapper {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08); /* Efecto zoom suave al pasar el mouse */
+        }
+        .gallery-caption {
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.1rem;
+            background: linear-gradient(180deg, #131720 0%, #0f131a 100%);
+            border-top: 1px solid #1f2833;
+        }
+
+        /* Metodología de Trabajo */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .step-card {
+            background: #131720;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #2a3245;
+        }
+        .step-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+        .step-card h4 {
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        .step-card p {
+            color: #b0b8c4;
+            font-size: 0.9rem;
         }
 
         /* Seguridad */
@@ -229,9 +307,11 @@
             border-radius: 12px;
             padding: 50px 25px;
             border: 1px solid #2a3245;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        /* Sección de Contacto Mejorada */
+        /* Contacto */
         .contact-box {
             background: linear-gradient(135deg, #131720, #1c2230);
             border: 1px solid #f39c12;
@@ -244,7 +324,7 @@
         }
         .contact-info {
             margin: 20px 0;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #d1d5db;
         }
         .contact-info p {
@@ -254,7 +334,7 @@
             color: #f39c12;
         }
 
-        /* Pie de página */
+        /* Footer */
         footer {
             background-color: #0d1017;
             text-align: center;
@@ -264,7 +344,7 @@
             margin-top: 40px;
         }
 
-        /* Botón flotante de WhatsApp */
+        /* Botón WhatsApp */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -283,7 +363,21 @@
             background-color: #1ebe57;
         }
 
-        /* Responsivo para celulares */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(243, 156, 18, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
+        }
+        @keyframes pulseLogo {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -294,14 +388,14 @@
                 font-size: 2.1rem;
             }
             .hero-logo {
-                max-width: 200px;
+                max-width: 180px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado con Logo -->
+    <!-- Encabezado -->
     <header>
         <div class="logo-nav">
             <img src="logo.png" alt="Logo El Visor La Gran B">
@@ -310,74 +404,156 @@
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Catálogo</a></li>
-                <li><a href="#seguridad">Seguridad</a></li>
+                <li><a href="#quienes-somos">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Bienvenida Llamativa con Logo y Fuegos Artificiales -->
+    <!-- Portada -->
     <div class="hero" id="inicio">
         <canvas id="fireworks-canvas"></canvas>
         <div class="hero-content">
             <img src="logo.png" alt="Pirotécnicos El Visor La Gran B" class="hero-logo">
             <h1>Iluminamos tus mejores <span>momentos</span></h1>
-            <p>Espectáculos pirotécnicos profesionales, tortas, volcanes y efectos especiales para bodas, fiestas y grandes eventos con máxima seguridad.</p>
+            <p>Espectáculos pirotécnicos profesionales, capacitación formal, montajes estructurales y efectos especiales[cite: 15, 19, 26].</p>
             <div class="hero-buttons">
-                <!-- Enlace directo al WhatsApp 3166887542 -->
                 <a href="https://wa.me/573166887542?text=Hola,%20vengo%20de%20su%20página%20web%20y%20quiero%20cotizar" target="_blank" class="btn-primary">🔥 Cotizar por WhatsApp</a>
-                <a href="#servicios" class="btn-secondary">Ver Catálogo</a>
+                <a href="#servicios" class="btn-secondary">Ver Servicios</a>
             </div>
         </div>
     </div>
 
-    <!-- Catálogo y Servicios -->
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <div class="about-container">
+            <p><strong>PIROTECNICOSELVISORLAGRANB</strong> es una iniciativa nacida del sueño de un colombiano que vio en el arte de la pirotecnia una oportunidad para transformar el empleo informal en una actividad empresarial formal[cite: 15]. Nos dedicamos a la capacitación y profesionalización de personal en el manejo de sustancias peligrosas clase 1.4, cumpliendo rigurosamente con las normativas nacionales e internacionales[cite: 15].</p>
+            <p>Apoyamos activamente a familias colombianas, incluyendo mujeres cabeza de hogar, jóvenes vulnerables, adultos mayores y desplazados, promoviendo siempre una actividad segura, regulada y protegiendo especialmente a niños y adolescentes[cite: 15].</p>
+        </div>
+    </section>
+
+    <!-- Servicios -->
     <section id="servicios">
-        <h2 class="section-title">Nuestros Productos y Servicios</h2>
+        <h2 class="section-title">Nuestros Servicios Profesionales</h2>
         <div class="grid">
             <div class="card">
-                <h3>🎆 Tortas y Baterías</h3>
-                <p>Secuencias multicolores de alta duración y gran altura ideales para celebraciones nocturnas inolvidables.</p>
+                <h3>🎆 Eventos Pirotécnicos</h3>
+                <p>Espectáculos impresionantes y seguros diseñados para iluminar celebraciones con la máxima calidad visual y estricto cumplimiento normativo[cite: 17].</p>
             </div>
             <div class="card">
-                <h3>🌋 Volcanes y Fuentes</h3>
-                <p>Efectos luminosos de piso con chispas doradas y plateadas, perfectos para entradas y momentos especiales.</p>
+                <h3>📚 Capacitaciones Integrales</h3>
+                <p>Formación especializada en normativas de transporte, comercialización, venta y fabricación de productos pirotécnicos con enfoque seguro[cite: 19].</p>
             </div>
             <div class="card">
-                <h3>💍 Pirotecnia para Eventos</h3>
-                <p>Montajes profesionales para bodas, quinceaños, conciertos y fiestas patronales con operación certificada.</p>
+                <h3>🏗️ Trabajos en Alturas y Decoraciones</h3>
+                <p>Soluciones seguras en iluminación, mantenimiento de fachadas, señalización y montajes decorativos elevados con personal certificado[cite: 21].</p>
             </div>
             <div class="card">
-                <h3>✨ Luz Fría (Interiores)</h3>
-                <p>Chispas sin humo ni calor excesivo, totalmente seguras para salones cerrados y pistas de baile.</p>
+                <h3>🎭 Montaje y Desmontaje de Tarimas</h3>
+                <p>Instalación profesional de escenarios estructurales en interiores y exteriores para eventos corporativos, conciertos y ferias[cite: 26].</p>
             </div>
         </div>
     </section>
 
-    <!-- Compromiso de Seguridad -->
-    <section id="seguridad">
+    <!-- Galería Fotográfica Mejorada -->
+    <section id="galeria" style="background-color: #0b0c10;">
+        <h2 class="section-title">Galería de Proyectos</h2>
+        <p style="text-align: center; color: #b0b8c4; margin-bottom: 40px;">Conoce nuestro trabajo en eventos, capacitaciones y montajes profesionales.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="evento.jpg" alt="Espectáculo Pirotécnico">
+                </div>
+                <div class="gallery-caption">Espectáculos Pirotécnicos</div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="capacitacion.jpg" alt="Capacitaciones">
+                </div>
+                <div class="gallery-caption">Capacitaciones Especializadas</div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="alturas.jpg" alt="Trabajos en Alturas">
+                </div>
+                <div class="gallery-caption">Trabajos en Alturas</div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="decoracion.jpg" alt="Decoraciones Temáticas">
+                </div>
+                <div class="gallery-caption">Decoraciones y Eventos</div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="tarimas.jpg" alt="Montaje de Tarimas">
+                </div>
+                <div class="gallery-caption">Montaje de Tarimas y Escenarios</div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="galeria.jpg" alt="Proyectos Especiales">
+                </div>
+                <div class="gallery-caption">Proyectos y Exhibiciones</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodología de Trabajo -->
+    <section id="metodologia">
+        <h2 class="section-title">Metodología de Trabajo</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h4>Consulta Inicial</h4>
+                <p>Reunión con el cliente para definir necesidades, diseño del espectáculo y presupuesto[cite: 28].</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h4>Permisos y Logística</h4>
+                <p>Gestión de permisos legales, planificación de transporte y traslado de equipos[cite: 28].</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h4>Ejecución Segura</h4>
+                <p>Implementación en campo del evento bajo supervisión experta para garantizar calidad total[cite: 28].</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <h4>Cierre y Evaluación</h4>
+                <p>Desmontaje, limpieza exhaustiva del área y retroalimentación final con el cliente[cite: 28].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compromiso y Seguridad -->
+    <section>
         <div class="safety">
-            <h2 class="section-title" style="margin-bottom: 15px;">Compromiso y Seguridad</h2>
-            <p style="max-width: 700px; margin: 0 auto; color: #b0b8c4;">
-                Cumplimos estrictamente con todas las normativas vigentes de almacenamiento, transporte y manipulación de artículos pirotécnicos. Venta exclusiva a mayores de edad.
+            <h2 class="section-title" style="margin-bottom: 15px;">Compromiso y Regulación</h2>
+            <p style="max-width: 750px; margin: 0 auto; color: #b0b8c4; font-size: 1.05rem;">
+                La pirotecnia en Colombia <strong>no está prohibida, está regulada</strong> (Decreto 2174 de 2023)[cite: 30]. Contamos con respaldo histórico y personal capacitado a través del SENA[cite: 30], garantizando operaciones seguras y profesionales.
             </p>
         </div>
     </section>
 
-    <!-- Sección de Contacto -->
+    <!-- Contacto -->
     <section id="contacto">
         <div class="contact-box">
-            <h2 class="section-title" style="margin-bottom: 20px;">Información de Contacto</h2>
-            <p style="color: #b0b8c4; margin-bottom: 20px;">¿Tienes un evento próximo o deseas una cotización detallada? Comunícate con nosotros a través de nuestros canales oficiales:</p>
+            <h2 class="section-title" style="margin-bottom: 20px;">Contáctanos</h2>
+            <p style="color: #b0b8c4; margin-bottom: 20px;">Comunícate con nuestro equipo para asesorarte en tu próximo evento o proyecto:</p>
             
             <div class="contact-info">
-                <p>📧 <strong>Correo de contacto:</strong> pirotecnicoselvisor@gmail.com</p>
-                <p>📞 <strong>Números celulares de contacto:</strong> 3108583858 - 3166887542 - 3006437800</p>
+                <p>📧 <strong>Correo:</strong> pirotecnicoselvisor@gmail.com</p>
+                <p>📞 <strong>Celulares / WhatsApp:</strong> 310 858 3858 - 316 688 7542 - 300 643 7800[cite: 12]</p>
             </div>
 
             <div style="margin-top: 30px;">
-                <a href="https://wa.me/573166887542?text=Hola,%20quisiera%20más%20información" target="_blank" class="btn-primary">💬 Escribir por WhatsApp</a>
+                <a href="https://wa.me/573166887542?text=Hola,%20quisiera%20más%20información%20sobre%20sus%20servicios" target="_blank" class="btn-primary">💬 Escribir por WhatsApp</a>
             </div>
         </div>
     </section>
@@ -387,12 +563,12 @@
         <p>&copy; 2026 Pirotécnicos El Visor La Gran B. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Botón flotante de WhatsApp (Número 3166887542) -->
+    <!-- Botón flotante -->
     <a href="https://wa.me/573166887542" target="_blank" class="whatsapp-float">
         💬 WhatsApp
     </a>
 
-    <!-- Script de animación de fuegos artificiales -->
+    <!-- Script de fuegos artificiales -->
     <script>
         const canvas = document.getElementById('fireworks-canvas');
         const ctx = canvas.getContext('2d');
@@ -469,6 +645,5 @@
         setTimeout(createFirework, 400);
         animate();
     </script>
-
 </body>
 </html>
