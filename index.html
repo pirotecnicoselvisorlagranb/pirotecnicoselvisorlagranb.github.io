@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirotécnicos El Visor La Gran B | Espectáculos y Productos</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0b0c10;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Encabezado y Navegación */
+        header {
+            background-color: #1f2833;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f39c12;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f39c12;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        /* Sección Principal (Hero) */
+        .hero {
+            background: linear-gradient(rgba(11, 12, 16, 0.75), rgba(11, 12, 16, 0.85)), 
+                        url('https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=1600&q=80') center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+        .hero span {
+            color: #f39c12;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #c5c6c7;
+        }
+        .btn {
+            background-color: #e67e22;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #d35400;
+        }
+
+        /* Secciones de contenido */
+        section {
+            padding: 60px 5%;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #f39c12;
+        }
+
+        /* Catálogo / Servicios */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background-color: #1f2833;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 3px solid #f39c12;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .card p {
+            color: #c5c6c7;
+            margin-bottom: 15px;
+        }
+
+        /* Seguridad */
+        .safety {
+            background-color: #141a21;
+            text-align: center;
+            border-radius: 8px;
+            padding: 40px 20px;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #1f2833;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+            color: #c5c6c7;
+        }
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        .whatsapp-float:hover {
+            background-color: #1ebe57;
+        }
+
+        /* Responsivo para celulares */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">El Visor La Gran B</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Catálogo</a></li>
+                <li><a href="#seguridad">Seguridad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Portada -->
+    <div class="hero" id="inicio">
+        <h1>Iluminamos tus mejores <span>momentos</span></h1>
+        <p>Espectáculos pirotécnicos profesionales, tortas, volcanes y efectos especiales para bodas, fiestas y grandes eventos.</p>
+        <a href="https://wa.me/573000000000?text=Hola,%20me%20gustaría%20cotizar%20productos%20pirotécnicos" target="_blank" class="btn">Cotizar por WhatsApp</a>
+    </div>
+
+    <!-- Catálogo y Servicios -->
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Productos y Servicios</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🎆 Tortas y Baterías</h3>
+                <p>Secuencias multicolores de alta duración y gran altura ideales para celebraciones nocturnas inolvidables.</p>
+            </div>
+            <div class="card">
+                <h3>🌋 Volcanes y Fuentes</h3>
+                <p>Efectos luminosos de piso con chispas doradas y plateadas, perfectos para entradas y momentos especiales.</p>
+            </div>
+            <div class="card">
+                <h3>💍 Pirotecnia para Eventos</h3>
+                <p>Montajes profesionales para bodas, quinceaños, conciertos y fiestas patronales con operación certificada.</p>
+            </div>
+            <div class="card">
+                <h3>✨ Luz Fría (Interiores)</h3>
+                <p>Chispas sin humo ni calor excesivo, totalmente seguras para salones cerrados y pistas de baile.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compromiso de Seguridad -->
+    <section id="seguridad">
+        <div class="safety">
+            <h2 class="section-title" style="margin-bottom: 15px;">Compromiso y Seguridad</h2>
+            <p style="max-width: 700px; margin: 0 auto; color: #c5c6c7;">
+                Cumplimos estrictamente con todas las normativas vigentes de almacenamiento, transporte y manipulación de artículos pirotécnicos. Venta exclusiva a mayores de edad.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" style="text-align: center;">
+        <h2 class="section-title">Contáctanos</h2>
+        <p style="margin-bottom: 20px; color: #c5c6c7;">¿Tienes un evento próximo o buscas un producto en específico? Escríbenos directamente.</p>
+        <a href="https://wa.me/573000000000?text=Hola,%20quisiera%20más%20información" target="_blank" class="btn">Enviar Mensaje</a>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Pirotécnicos El Visor La Gran B. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573000000000" target="_blank" class="whatsapp-float">
+        💬 WhatsApp
+    </a>
+
+</body>
+</html>
