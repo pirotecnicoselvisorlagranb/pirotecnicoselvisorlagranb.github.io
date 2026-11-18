@@ -25,7 +25,7 @@
             color: inherit;
         }
         section, .hero {
-            scroll-margin-top: 80px;
+            scroll-margin-top: 85px;
         }
 
         /* Encabezado */
@@ -373,41 +373,6 @@
             color: #f39c12;
         }
 
-        /* Modal Emergente de Contacto */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .modal-content {
-            background: linear-gradient(135deg, #131720, #1c2230);
-            border: 2px solid #f39c12;
-            border-radius: 14px;
-            padding: 35px 25px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 0 30px rgba(243, 156, 18, 0.4);
-        }
-        .close-modal {
-            position: absolute;
-            top: 12px;
-            right: 18px;
-            font-size: 1.8rem;
-            color: #f39c12;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
         /* Footer */
         footer {
             background-color: #0d1017;
@@ -478,7 +443,7 @@
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#portafolio">Portafolio</a></li>
                 <li><a href="#metodologia">Metodología</a></li>
-                <li><a href="#contacto" onclick="abrirContacto()">Contacto</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -554,4 +519,258 @@
             <div class="flip-card" tabindex="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="decoracion.
+                        <img src="decoracion.jpg" alt="Decoraciones Temáticas">
+                        <div class="caption">Decoraciones y Eventos <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🎄 Ambientación y Estilo</h3>
+                        <p>Combinamos creatividad, innovación y atención al detalle para garantizar que cada proyecto refleje la identidad y los valores de nuestros clientes. Nuestro objetivo es crear espacios que no solo sean visualmente impresionantes, sino también funcionales y acogedores, aumentando así la satisfacción y fidelidad de los visitantes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="tarimas.jpg" alt="Montaje de Tarimas">
+                        <div class="caption">Montaje de Tarimas <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🎭 Escenarios Profesionales</h3>
+                        <p>Nos especializamos en el montaje profesional de tarimas para una amplia variedad de eventos, tanto en interiores como en exteriores. Nuestro equipo de expertos se dedica a proporcionar soluciones innovadoras y de alta calidad para garantizar el éxito de su evento, creando escenarios impresionantes y funcionales.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="galeria.jpg" alt="Proyectos Especiales">
+                        <div class="caption">Proyectos y Exhibiciones <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>✨ Efectos Especiales</h3>
+                        <p>Desarrollamos exhibiciones personalizadas de alto impacto visual para festividades municipales, lanzamientos de marca y celebraciones privadas, operando bajo estrictos protocolos técnicos y supervisión especializada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Portafolio / Catálogo de Productos (Canva) -->
+    <section id="portafolio">
+        <h2 class="section-title">Catálogo y Portafolio</h2>
+        <div class="portfolio-container">
+            <p style="color: #d1d5db; margin-bottom: 25px;">Explora nuestro catálogo oficial de productos y servicios pirotécnicos directamente desde aquí:</p>
+            
+            <div style="position: relative; width: 100%; height: 0; padding-top: 100.0000%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); overflow: hidden; border-radius: 8px; will-change: transform;">
+              <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                src="https://www.canva.com/design/DAG4CZqYPeY/mhHBoQ0qyAgc0l_6X9ZeTA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+              </iframe>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <a href="https://www.canva.com/design/DAG4CZqYPeY/mhHBoQ0qyAgc0l_6X9ZeTA/view?utm_content=DAG4CZqYPeY&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="btn-primary" style="font-size: 0.9rem; padding: 10px 24px;">🔗 Ver Pantalla Completa en Canva</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodología de Trabajo -->
+    <section id="metodologia">
+        <h2 class="section-title">Nuestra Metodología</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h4>Inspección Técnica</h4>
+                <p>Evaluamos el área del evento, perímetros de seguridad y condiciones ambientales.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h4>Diseño del Show</h4>
+                <p>Seleccionamos la secuencia pirotécnica y efectos especiales según la magnitud del evento.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h4>Montaje Certificado</h4>
+                <p>Instalación realizada por técnicos capacitados en manejo de sustancias clase 1.4.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <h4>Ejecución y Cierre</h4>
+                <p>Disparo sincronizado, verificación post-evento y limpieza total del área operativa.</p>
+            </div>
+        </div>
+
+        <div class="safety">
+            <h3 style="color: #f39c12; margin-bottom: 15px; font-size: 1.5rem;">🛡️ Compromiso Total con la Seguridad</h3>
+            <p style="color: #d1d5db;">Operamos con personal certificado, equipos de protección personal (EPP), planes de contingencia y cumplimiento estricto de las normativas vigentes para garantizar espectáculos responsables y libres de riesgos.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto en la Página -->
+    <section id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-box">
+            <p style="color: #d1d5db; margin-bottom: 20px;">¿Listo para iluminar tu próximo evento? Contáctanos para asesoría y cotizaciones personalizadas.</p>
+            <div class="contact-info">
+                <p><strong>Teléfono / Llamadas:</strong> <a href="tel:+573108583858">+57 310 858 3858</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/573166887542?text=Hola,%20vengo%20de%20su%20página%20web%20y%20quiero%20cotizar" target="_blank">+57 316 688 7542</a></p>
+                <p><strong>Correo:</strong> <a href="mailto:pirotecnicoselvisorlagranb@gmail.com" style="word-break: break-all;">pirotecnicoselvisorlagranb@gmail.com</a></p>
+                <p><strong>Cobertura:</strong> Servicios a nivel nacional</p>
+            </div>
+            <a href="https://wa.me/573166887542?text=Hola,%20quisiera%20solicitar%20información%20sobre%20sus%20servicios" target="_blank" class="btn-primary">Enviar Mensaje Directo</a>
+        </div>
+    </section>
+
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/573166887542?text=Hola,%20vengo%20de%20su%20página%20web" target="_blank" class="whatsapp-float">
+        💬 WhatsApp
+    </a>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Pirotécnicos El Visor La Gran B. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script de Fuegos Artificiales -->
+    <script>
+        window.addEventListener('load', function() {
+            const canvas = document.getElementById('fireworks-canvas');
+            const ctx = canvas.getContext('2d');
+            const heroSection = document.getElementById('inicio');
+
+            function resizeCanvas() {
+                canvas.width = heroSection.clientWidth || window.innerWidth;
+                canvas.height = heroSection.clientHeight || window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            const fireworks = [];
+            const particles = [];
+            const colors = ['#f39c12', '#ffdd59', '#ff4757', '#2ed573', '#1e90ff', '#ff6b81', '#ffffff', '#eccc68'];
+
+            class Firework {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = canvas.height;
+                    this.targetX = canvas.width / 2 + (Math.random() - 0.5) * (canvas.width * 0.7);
+                    this.targetY = canvas.height * (0.1 + Math.random() * 0.35);
+                    const angle = Math.atan2(this.targetY - this.y, this.targetX - this.x);
+                    const speed = 9 + Math.random() * 4;
+                    this.vx = Math.cos(angle) * speed;
+                    this.vy = Math.sin(angle) * speed;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.trail = [];
+                }
+
+                update() {
+                    this.trail.push({ x: this.x, y: this.y });
+                    if (this.trail.length > 5) this.trail.shift();
+
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.y <= this.targetY) {
+                        this.explode();
+                        return false;
+                    }
+                    return true;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    if (this.trail.length > 0) {
+                        ctx.moveTo(this.trail[0].x, this.trail[0].y);
+                        ctx.lineTo(this.x, this.y);
+                    }
+                    ctx.strokeStyle = this.color;
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+                }
+
+                explode() {
+                    const count = 85;
+                    for (let i = 0; i < count; i++) {
+                        particles.push(new Particle(this.x, this.y, this.color));
+                    }
+                }
+            }
+
+            class Particle {
+                constructor(x, y, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.color = Math.random() > 0.25 ? color : '#ffffff';
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = Math.random() * 6 + 1.5;
+                    this.vx = Math.cos(angle) * speed;
+                    this.vy = Math.sin(angle) * speed;
+                    this.gravity = 0.05;
+                    this.friction = 0.95;
+                    this.alpha = 1;
+                    this.decay = 0.012 + Math.random() * 0.012;
+                }
+
+                update() {
+                    this.vx *= this.friction;
+                    this.vy *= this.friction;
+                    this.vy += this.gravity;
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.alpha -= this.decay;
+                    return this.alpha > 0;
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = this.color;
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.22)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'lighter';
+
+                for (let i = fireworks.length - 1; i >= 0; i--) {
+                    if (!fireworks[i].update()) {
+                        fireworks.splice(i, 1);
+                    } else {
+                        fireworks[i].draw();
+                    }
+                }
+
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    if (!particles[i].update()) {
+                        particles.splice(i, 1);
+                    } else {
+                        particles[i].draw();
+                    }
+                }
+            }
+
+            setInterval(function() {
+                fireworks.push(new Firework());
+                if (Math.random() > 0.3) {
+                    fireworks.push(new Firework());
+                }
+            }, 650);
+
+            fireworks.push(new Firework());
+            fireworks.push(new Firework());
+            animate();
+        });
+    </script>
+
+</body>
+</html>
