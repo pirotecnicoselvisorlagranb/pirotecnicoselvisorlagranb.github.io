@@ -70,7 +70,7 @@
             color: #f39c12;
         }
 
-        /* BIENVENIDA LLAMATIVA (HERO CON LOGO Y FUEGOS ARTIFICIALES) */
+        /* BIENVENIDA LLAMATIVA (HERO) */
         .hero {
             position: relative;
             height: 100vh;
@@ -146,6 +146,7 @@
             box-shadow: 0 0 20px rgba(243, 156, 18, 0.6);
             animation: pulse 2s infinite;
             transition: transform 0.3s;
+            display: inline-block;
         }
         .btn-primary:hover {
             transform: scale(1.05);
@@ -230,6 +231,29 @@
             border: 1px solid #2a3245;
         }
 
+        /* Sección de Contacto Mejorada */
+        .contact-box {
+            background: linear-gradient(135deg, #131720, #1c2230);
+            border: 1px solid #f39c12;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        .contact-info {
+            margin: 20px 0;
+            font-size: 1.15rem;
+            color: #d1d5db;
+        }
+        .contact-info p {
+            margin: 12px 0;
+        }
+        .contact-info strong {
+            color: #f39c12;
+        }
+
         /* Pie de página */
         footer {
             background-color: #0d1017;
@@ -237,6 +261,7 @@
             padding: 30px 20px;
             border-top: 1px solid #1f2833;
             color: #8892b0;
+            margin-top: 40px;
         }
 
         /* Botón flotante de WhatsApp */
@@ -300,7 +325,8 @@
             <h1>Iluminamos tus mejores <span>momentos</span></h1>
             <p>Espectáculos pirotécnicos profesionales, tortas, volcanes y efectos especiales para bodas, fiestas y grandes eventos con máxima seguridad.</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/573108583858?text=Hola,%20vengo%20de%20su%20página%20web%20y%20quiero%20cotizar" target="_blank" class="btn-primary">🔥 Cotizar por WhatsApp</a>
+                <!-- Enlace directo al WhatsApp 3166887542 -->
+                <a href="https://wa.me/573166887542?text=Hola,%20vengo%20de%20su%20página%20web%20y%20quiero%20cotizar" target="_blank" class="btn-primary">🔥 Cotizar por WhatsApp</a>
                 <a href="#servicios" class="btn-secondary">Ver Catálogo</a>
             </div>
         </div>
@@ -339,11 +365,21 @@
         </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" style="text-align: center;">
-        <h2 class="section-title">¿Listo para iluminar tu evento?</h2>
-        <p style="margin-bottom: 25px; color: #b0b8c4;">Escríbenos directamente y te asesoramos según tu presupuesto y tipo de celebración.</p>
-        <a href="https://wa.me/573108583858?text=Hola,%20quisiera%20más%20información" target="_blank" class="btn-primary">Hablar por WhatsApp</a>
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <div class="contact-box">
+            <h2 class="section-title" style="margin-bottom: 20px;">Información de Contacto</h2>
+            <p style="color: #b0b8c4; margin-bottom: 20px;">¿Tienes un evento próximo o deseas una cotización detallada? Comunícate con nosotros a través de nuestros canales oficiales:</p>
+            
+            <div class="contact-info">
+                <p>📧 <strong>Correo de contacto:</strong> pirotecnicoselvisor@gmail.com</p>
+                <p>📞 <strong>Números celulares de contacto:</strong> 3108583858 - 3166887542 - 3006437800</p>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <a href="https://wa.me/573166887542?text=Hola,%20quisiera%20más%20información" target="_blank" class="btn-primary">💬 Escribir por WhatsApp</a>
+            </div>
+        </div>
     </section>
 
     <!-- Pie de página -->
@@ -351,7 +387,7 @@
         <p>&copy; 2026 Pirotécnicos El Visor La Gran B. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Botón flotante de WhatsApp -->
+    <!-- Botón flotante de WhatsApp (Número 3166887542) -->
     <a href="https://wa.me/573166887542" target="_blank" class="whatsapp-float">
         💬 WhatsApp
     </a>
