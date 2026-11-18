@@ -180,7 +180,7 @@
             letter-spacing: 1px;
         }
 
-        /* Quienes Somos */
+        /* Quiénes Somos */
         .about-container {
             max-width: 900px;
             margin: 0 auto;
@@ -197,35 +197,7 @@
             text-align: justify;
         }
 
-        /* Servicios */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .card {
-            background-color: #131720;
-            padding: 30px;
-            border-radius: 12px;
-            border-top: 4px solid #f39c12;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: #ffdd59;
-        }
-        .card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
-            color: #ffffff;
-        }
-        .card p {
-            color: #b0b8c4;
-            font-size: 0.95rem;
-        }
-
-        /* --- GALERÍA FOTOGRÁFICA MEJORADA --- */
+        /* --- SECCIÓN DE NUESTROS SERVICIOS (TARJETAS GIRATORIAS 3D) --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -233,42 +205,82 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        .gallery-item {
-            background: #131720;
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 320px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .flip-card:hover .flip-card-inner,
+        .flip-card:focus .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid #2a3245;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .gallery-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(243, 156, 18, 0.2);
-            border-color: #f39c12;
+        .flip-card-front {
+            background-color: #131720;
+            display: flex;
+            flex-direction: column;
         }
-        .image-wrapper {
+        .flip-card-front img {
             width: 100%;
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
+            height: 245px;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
-        .gallery-item:hover img {
-            transform: scale(1.08); /* Efecto zoom suave al pasar el mouse */
-        }
-        .gallery-caption {
-            padding: 20px;
-            text-align: center;
+        .flip-card-front .caption {
+            padding: 15px;
             font-weight: 700;
             color: #fff;
-            font-size: 1.1rem;
-            background: linear-gradient(180deg, #131720 0%, #0f131a 100%);
+            font-size: 1.05rem;
+            background: #131720;
             border-top: 1px solid #1f2833;
+        }
+        .flip-card-back {
+            background: linear-gradient(135deg, #1c2230, #131720);
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #f39c12;
+        }
+        .flip-card-back h3 {
+            color: #f39c12;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        .flip-card-back p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .hint-text {
+            font-size: 0.75rem;
+            color: #f39c12;
+            margin-top: 5px;
+            opacity: 0.8;
         }
 
         /* Metodología de Trabajo */
@@ -406,7 +418,6 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#quienes-somos">Nosotros</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#metodologia">Metodología</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -431,219 +442,94 @@
     <section id="quienes-somos">
         <h2 class="section-title">Quiénes Somos</h2>
         <div class="about-container">
-            <p><strong>PIROTECNICOSELVISORLAGRANB</strong> es una iniciativa nacida del sueño de un colombiano que vio en el arte de la pirotecnia una oportunidad para transformar el empleo informal en una actividad empresarial formal. Nos dedicamos a la capacitación y profesionalización de personal en el manejo de sustancias peligrosas clase 1.4, cumpliendo rigurosamente con las normativas nacionales e internacionales.</p>
-            <p>Apoyamos activamente a familias colombianas, incluyendo mujeres cabeza de hogar, jóvenes vulnerables, adultos mayores y desplazados, promoviendo siempre una actividad segura, regulada y protegiendo especialmente a niños y adolescentes.</p>
+            <p><strong>PIROTECNICOSELVISORLAGRANB</strong> es una iniciativa nacida del sueño de un colombiano que vio en el arte de la pirotecnia una oportunidad para transformar el empleo informal en una actividad empresarial formal[cite: 15]. Nos dedicamos a la capacitación y profesionalización de personal en el manejo de sustancias peligrosas clase 1.4, cumpliendo rigurosamente con las normativas nacionales e internacionales[cite: 15].</p>
+            <p>Apoyamos activamente a familias colombianas, incluyendo mujeres cabeza de hogar, jóvenes vulnerables, adultos mayores y desplazados, promoviendo siempre una actividad segura, regulada y protegiendo especialmente a niños y adolescentes[cite: 15].</p>
         </div>
     </section>
 
-    <!-- Servicios -->
-    <section id="servicios">
-        <h2 class="section-title">Nuestros Servicios Profesionales</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🎆 Eventos Pirotécnicos</h3>
-                <p>Espectáculos impresionantes y seguros diseñados para iluminar celebraciones con la máxima calidad visual y estricto cumplimiento normativo.</p>
-            </div>
-            <div class="card">
-                <h3>📚 Capacitaciones Integrales</h3>
-                <p>Formación especializada en normativas de transporte, comercialización, venta y fabricación de productos pirotécnicos con enfoque seguro.</p>
-            </div>
-            <div class="card">
-                <h3>🏗️ Trabajos en Alturas y Decoraciones</h3>
-                <p>Soluciones seguras en iluminación, mantenimiento de fachadas, señalización y montajes decorativos elevados con personal certificado.</p>
-            </div>
-            <div class="card">
-                <h3>🎭 Montaje y Desmontaje de Tarimas</h3>
-                <p>Instalación profesional de escenarios estructurales en interiores y exteriores para eventos corporativos, conciertos y ferias.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galería Fotográfica Mejorada -->
-    <section id="galeria" style="background-color: #0b0c10;">
-        <h2 class="section-title">Galería de Proyectos</h2>
-        <p style="text-align: center; color: #b0b8c4; margin-bottom: 40px;">Conoce nuestro trabajo en eventos, capacitaciones y montajes profesionales.</p>
+    <!-- Sección de Nuestros Servicios (Con efecto de volteo) -->
+    <section id="servicios" style="background-color: #0b0c10;">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p style="text-align: center; color: #b0b8c4; margin-bottom: 40px;">Pasa el cursor o toca cada imagen para descubrir los detalles de nuestras soluciones profesionales.</p>
         
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="evento.jpg" alt="Espectáculo Pirotécnico">
-                </div>
-                <div class="gallery-caption">Espectáculos Pirotécnicos</div>
-            </div>
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="capacitacion.jpg" alt="Capacitaciones">
-                </div>
-                <div class="gallery-caption">Capacitaciones Especializadas</div>
-            </div>
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="alturas.jpg" alt="Trabajos en Alturas">
-                </div>
-                <div class="gallery-caption">Trabajos en Alturas</div>
-            </div>
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="decoracion.jpg" alt="Decoraciones Temáticas">
-                </div>
-                <div class="gallery-caption">Decoraciones y Eventos</div>
-            </div>
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="tarimas.jpg" alt="Montaje de Tarimas">
-                </div>
-                <div class="gallery-caption">Montaje de Tarimas y Escenarios</div>
-            </div>
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="galeria.jpg" alt="Proyectos Especiales">
-                </div>
-                <div class="gallery-caption">Proyectos y Exhibiciones</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Metodología de Trabajo -->
-    <section id="metodologia">
-        <h2 class="section-title">Metodología de Trabajo</h2>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">01</div>
-                <h4>Consulta Inicial</h4>
-                <p>Reunión con el cliente para definir necesidades, diseño del espectáculo y presupuesto[cite: 28].</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">02</div>
-                <h4>Permisos y Logística</h4>
-                <p>Gestión de permisos legales, planificación de transporte y traslado de equipos[cite: 28].</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">03</div>
-                <h4>Ejecución Segura</h4>
-                <p>Implementación en campo del evento bajo supervisión experta para garantizar calidad total[cite: 28].</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">04</div>
-                <h4>Cierre y Evaluación</h4>
-                <p>Desmontaje, limpieza exhaustiva del área y retroalimentación final con el cliente[cite: 28].</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compromiso y Seguridad -->
-    <section>
-        <div class="safety">
-            <h2 class="section-title" style="margin-bottom: 15px;">Compromiso y Regulación</h2>
-            <p style="max-width: 750px; margin: 0 auto; color: #b0b8c4; font-size: 1.05rem;">
-                La pirotecnia en Colombia <strong>no está prohibida, está regulada</strong> (Decreto 2174 de 2023)[cite: 30]. Contamos con respaldo histórico y personal capacitado a través del SENA[cite: 30], garantizando operaciones seguras y profesionales.
-            </p>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto">
-        <div class="contact-box">
-            <h2 class="section-title" style="margin-bottom: 20px;">Contáctanos</h2>
-            <p style="color: #b0b8c4; margin-bottom: 20px;">Comunícate con nuestro equipo para asesorarte en tu próximo evento o proyecto:</p>
             
-            <div class="contact-info">
-                <p>📧 <strong>Correo:</strong> pirotecnicoselvisor@gmail.com</p>
-                <p>📞 <strong>Celulares / WhatsApp:</strong> 310 858 3858 - 316 688 7542 - 300 643 7800[cite: 12]</p>
+            <!-- Tarjeta 1 -->
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="evento.jpg" alt="Espectáculo Pirotécnico">
+                        <div class="caption">Espectáculos Pirotécnicos <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🎆 Pirotecnia Profesional</h3>
+                        <p>Diseñamos y ejecutamos espectáculos luminosos impresionantes y seguros para bodas, conciertos y grandes celebraciones con máxima calidad[cite: 17].</p>
+                    </div>
+                </div>
             </div>
 
-            <div style="margin-top: 30px;">
-                <a href="https://wa.me/573166887542?text=Hola,%20quisiera%20más%20información%20sobre%20sus%20servicios" target="_blank" class="btn-primary">💬 Escribir por WhatsApp</a>
+            <!-- Tarjeta 2 -->
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="capacitacion.jpg" alt="Capacitaciones">
+                        <div class="caption">Capacitaciones Especializadas <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>📚 Formación Integral</h3>
+                        <p>Brindamos capacitación completa en normativas de transporte, comercialización y manejo seguro de productos pirotécnicos clase 1.4[cite: 15, 19].</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2026 Pirotécnicos El Visor La Gran B. Todos los derechos reservados.</p>
-    </footer>
+            <!-- Tarjeta 3 -->
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="alturas.jpg" alt="Trabajos en Alturas">
+                        <div class="caption">Trabajos en Alturas <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🏗️ Operaciones en Altura</h3>
+                        <p>Instalación y mantenimiento seguro de iluminación, fachadas y estructuras elevadas con personal altamente certificado y equipos de última generación[cite: 21].</p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Botón flotante -->
-    <a href="https://wa.me/573166887542" target="_blank" class="whatsapp-float">
-        💬 WhatsApp
-    </a>
+            <!-- Tarjeta 4 -->
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="decoracion.jpg" alt="Decoraciones Temáticas">
+                        <div class="caption">Decoraciones y Eventos <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🎄 Ambientación y Estilo</h3>
+                        <p>Creamos espacios temáticos memorables para centros comerciales y eventos especiales (Halloween, Navidad) combinando creatividad y seguridad[cite: 19].</p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Script de fuegos artificiales -->
-    <script>
-        const canvas = document.getElementById('fireworks-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+            <!-- Tarjeta 5 -->
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="tarimas.jpg" alt="Montaje de Tarimas">
+                        <div class="caption">Montaje de Tarimas <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🎭 Escenarios Profesionales</h3>
+                        <p>Montaje y desmontaje experto de tarimas en interiores y exteriores, garantizando estructuras sólidas y funcionales para el éxito de tu evento[cite: 26].</p>
+                    </div>
+                </div>
+            </div>
 
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        const colors = ['#f39c12', '#ffdd59', '#ff4757', '#2ed573', '#1e90ff', '#ffffff'];
-        let particles = [];
-
-        class Particle {
-            constructor(x, y, color) {
-                this.x = x;
-                this.y = y;
-                this.color = color;
-                const angle = Math.random() * Math.PI * 2;
-                const speed = Math.random() * 5 + 1.5;
-                this.vx = Math.cos(angle) * speed;
-                this.vy = Math.sin(angle) * speed;
-                this.alpha = 1;
-                this.decay = Math.random() * 0.015 + 0.012;
-            }
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                this.vy += 0.04;
-                this.alpha -= this.decay;
-            }
-            draw() {
-                ctx.save();
-                ctx.globalAlpha = this.alpha;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.shadowBlur = 10;
-                ctx.shadowColor = this.color;
-                ctx.fill();
-                ctx.restore();
-            }
-        }
-
-        function createFirework() {
-            const x = Math.random() * (canvas.width * 0.8) + canvas.width * 0.1;
-            const y = Math.random() * (canvas.height * 0.5) + canvas.height * 0.1;
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            for (let i = 0; i < 45; i++) {
-                particles.push(new Particle(x, y, color));
-            }
-        }
-
-        function animate() {
-            ctx.fillStyle = 'rgba(7, 8, 11, 0.2)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            if (Math.random() < 0.045) {
-                createFirework();
-            }
-
-            for (let i = particles.length - 1; i >= 0; i--) {
-                particles[i].update();
-                particles[i].draw();
-                if (particles[i].alpha <= 0) {
-                    particles.splice(i, 1);
-                }
-            }
-            requestAnimationFrame(animate);
-        }
-
-        createFirework();
-        setTimeout(createFirework, 400);
-        animate();
-    </script>
-</body>
-</html>
+            <!-- Tarjeta 6 -->
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="galeria.jpg" alt="Proyectos Especiales">
+                        <div class="caption">Proyectos y Exhibiciones <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>✨
