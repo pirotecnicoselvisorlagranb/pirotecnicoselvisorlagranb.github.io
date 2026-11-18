@@ -25,7 +25,7 @@
             color: inherit;
         }
         section, .hero {
-            scroll-margin-top: 75px;
+            scroll-margin-top: 80px;
         }
 
         /* Encabezado */
@@ -69,6 +69,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: color 0.3s;
+            cursor: pointer;
         }
         nav a:hover {
             color: #f39c12;
@@ -78,6 +79,7 @@
         .hero {
             position: relative;
             height: 100vh;
+            min-height: 600px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -100,7 +102,6 @@
             position: relative;
             z-index: 2;
             max-width: 850px;
-            animation: fadeInUp 1.2s ease-out;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -201,7 +202,7 @@
             text-align: justify;
         }
 
-        /* --- SECCIÓN DE NUESTROS SERVICIOS (TARJETAS GIRATORIAS 3D) --- */
+        /* --- SECCIÓN DE NUESTROS SERVICIOS --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -332,9 +333,306 @@
         /* Contacto */
         .contact-box {
             background: linear-gradient(135deg, #131720, #1c2230);
-            border: 1px solid #f39c12;
+            border: 2px solid #f39c12;
             border-radius: 12px;
             padding: 40px;
             max-width: 700px;
             margin: 0 auto;
-            text-align
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        .contact-info {
+            margin: 20px 0;
+            font-size: 1.15rem;
+            color: #ffffff;
+        }
+        .contact-info p {
+            margin: 16px 0;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .contact-info strong {
+            color: #f39c12;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .contact-info a:hover {
+            color: #f39c12;
+        }
+
+        /* Modal Emergente de Contacto */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #131720, #1c2230);
+            border: 2px solid #f39c12;
+            border-radius: 14px;
+            padding: 35px 25px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 30px rgba(243, 156, 18, 0.4);
+        }
+        .close-modal {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 1.8rem;
+            color: #f39c12;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d1017;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #1f2833;
+            color: #8892b0;
+            margin-top: 40px;
+        }
+
+        /* Botón WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 22px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background-color: #1ebe57;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(243, 156, 18, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
+        }
+        @keyframes pulseLogo {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .hero-logo {
+                max-width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-nav">
+            <img src="logo.png" alt="Logo El Visor La Gran B">
+            <span>El Visor La Gran B</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#contacto" onclick="abrirContacto()">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Portada con Fuegos Artificiales -->
+    <div class="hero" id="inicio">
+        <canvas id="fireworks-canvas"></canvas>
+        <div class="hero-content">
+            <img src="logo.png" alt="Pirotécnicos El Visor La Gran B" class="hero-logo">
+            <h1>Iluminamos tus mejores <span>momentos</span></h1>
+            <p>Espectáculos pirotécnicos profesionales, capacitación formal, montajes estructurales y efectos especiales.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/573166887542?text=Hola,%20vengo%20de%20su%20página%20web%20y%20quiero%20cotizar" target="_blank" class="btn-primary">🔥 Cotizar por WhatsApp</a>
+                <a href="#servicios" class="btn-secondary">Ver Servicios</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <div class="about-container">
+            <p><strong>PIROTECNICOSELVISORLAGRANB</strong> es una iniciativa nacida del sueño de un colombiano que vio en el arte de la pirotecnia una oportunidad para transformar el empleo informal en una actividad empresarial formal. Nos dedicamos a la capacitación y profesionalización de personal en el manejo de sustancias peligrosas clase 1.4, cumpliendo rigurosamente con las normativas nacionales e internacionales.</p>
+            <p>Apoyamos activamente a familias colombianas, incluyendo mujeres cabeza de hogar, jóvenes vulnerables, adultos mayores y desplazados, promoviendo siempre una actividad segura, regulada y protegiendo especialmente a niños y adolescentes.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Nuestros Servicios -->
+    <section id="servicios" style="background-color: #0b0c10;">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p style="text-align: center; color: #b0b8c4; margin-bottom: 40px;">Pasa el cursor o toca cada imagen para descubrir los detalles de nuestras soluciones profesionales.</p>
+        
+        <div class="gallery-grid">
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="evento.jpg" alt="Espectáculo Pirotécnico">
+                        <div class="caption">Espectáculos Pirotécnicos <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🎆 Pirotecnia Profesional</h3>
+                        <p>Nos destacamos en la creación de espectáculos pirotécnicos impresionantes y seguros, diseñados para iluminar sus eventos con asombro y emoción. Nuestro equipo de expertos en pirotecnia se compromete a proporcionar experiencias visuales inolvidables, adaptadas a cualquier tipo de celebración, garantizando siempre la máxima seguridad y calidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="capacitacion.jpg" alt="Capacitaciones">
+                        <div class="caption">Capacitaciones Especializadas <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>📚 Formación Integral</h3>
+                        <p>Brindamos capacitación integral en normativas relacionadas con el transporte, distribución, comercialización, venta y realización de eventos pirotécnicos, así como en la fabricación de productos pirotécnicos. Nuestro enfoque abarca todas las etapas del proceso, asegurando el cumplimiento de las regulaciones y fomentando prácticas seguras y eficientes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="alturas.jpg" alt="Trabajos en Alturas">
+                        <div class="caption">Trabajos en Alturas <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🏗️ Operaciones en Altura</h3>
+                        <p>Ofrecemos servicios especializados en trabajos en alturas y decoraciones, diseñados para llevar tus proyectos a nuevas alturas de estilo y funcionalidad. Nuestro equipo de profesionales altamente capacitados se dedica a proporcionar soluciones seguras y eficientes, garantizando resultados excepcionales en cada tarea.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="decoracion.jpg" alt="Decoraciones Temáticas">
+                        <div class="caption">Decoraciones y Eventos <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🎄 Ambientación y Estilo</h3>
+                        <p>Combinamos creatividad, innovación y atención al detalle para garantizar que cada proyecto refleje la identidad y los valores de nuestros clientes. Nuestro objetivo es crear espacios que no solo sean visualmente impresionantes, sino también funcionales y acogedores, aumentando así la satisfacción y fidelidad de los visitantes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="tarimas.jpg" alt="Montaje de Tarimas">
+                        <div class="caption">Montaje de Tarimas <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>🎭 Escenarios Profesionales</h3>
+                        <p>Nos especializamos en el montaje profesional de tarimas para una amplia variedad de eventos, tanto en interiores como en exteriores. Nuestro equipo de expertos se dedica a proporcionar soluciones innovadoras y de alta calidad para garantizar el éxito de su evento, creando escenarios impresionantes y funcionales.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="galeria.jpg" alt="Proyectos Especiales">
+                        <div class="caption">Proyectos y Exhibiciones <div class="hint-text">🔄 Voltear para ver detalles</div></div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>✨ Efectos Especiales</h3>
+                        <p>Desarrollamos exhibiciones personalizadas de alto impacto visual para festividades municipales, lanzamientos de marca y celebraciones privadas, operando bajo estrictos protocolos técnicos y supervisión especializada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodología de Trabajo -->
+    <section id="metodologia">
+        <h2 class="section-title">Nuestra Metodología</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h4>Inspección Técnica</h4>
+                <p>Evaluamos el área del evento, perímetros de seguridad y condiciones ambientales.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h4>Diseño del Show</h4>
+                <p>Seleccionamos la secuencia pirotécnica y efectos especiales según la magnitud del evento.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h4>Montaje Certificado</h4>
+                <p>Instalación realizada por técnicos capacitados en manejo de sustancias clase 1.4.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <h4>Ejecución y Cierre</h4>
+                <p>Disparo sincronizado, verificación post-evento y limpieza total del área operativa.</p>
+            </div>
+        </div>
+
+        <div class="safety">
+            <h3 style="color: #f39c12; margin-bottom: 15px; font-size: 1.5rem;">🛡️ Compromiso Total con la Seguridad</h3>
+            <p style="color: #d1d5db;">Operamos con personal certificado, equipos de protección personal (EPP), planes de contingencia y cumplimiento estricto de las normativas vigentes para garantizar espectáculos responsables y libres de riesgos.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto en la Página -->
+    <section id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-box">
+            <p style="color: #d1d5db; margin-bottom: 20px;">Comunícate directamente con nuestro equipo para asesoría y cotizaciones personalizadas:</p>
+            <div class="contact-info">
+                <p><strong>📞 Línea de Atención / Llamadas:</strong>
+                    <a href="tel:+573108583858">+57 310 858 3858</a>
+                </p>
+                <p><strong>💬 WhatsApp Directo:</strong>
+                    <a href="https://wa.me/573166887542?text=Hola,%20vengo%20de%20su%20página%20web%20y%20quiero%20cotizar" target="_blank">+57 316 688 7542</a>
+                </p>
+                <p><strong>✉️ Correo Electrónico:</strong>
+                    <a href="mailto:pirotecnicoselvisorlagranb@gmail.com" style="word-break: break-all;">pirotecnicoselvisorlagranb@gmail.com</a>
+                </p>
+            </div>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 25px;">
+                <a href="https://wa.me/573166887542?text=Hola,%20quisiera%20solicitar%20información%20sobre%20sus%20servicios" target="_blank" class="btn-primary">💬 Escribir al WhatsApp</a>
+                <a href="tel:+573108583858" class="btn-secondary">📞 Llamar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventana Emergente (Modal) al picar "Contacto" arriba -->
+    <div id="modal
